@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                echo 'Cloning GitHub Repository...'
+                git url: 'https://github.com/yourusername/your-java-repo.git', branch: 'main'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Compiling Java code...'
+                sh 'javac HelloWorld.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running Java program...'
+                sh 'java HelloWorld'
+            }
+        }
+    }
+}
