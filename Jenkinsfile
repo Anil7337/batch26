@@ -12,14 +12,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compiling Java code...'
-                '
+                sh 'javac HelloWorld.java'
             }
         }
 
-        stage('package') {
+        stage('Package') {
             steps {
-                echo 'Running package...'
-               
+                echo 'Packaging application...'
+                
             }
         }
     }
